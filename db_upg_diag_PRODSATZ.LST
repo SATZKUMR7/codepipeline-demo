@@ -1,0 +1,285 @@
+SP2-0158: unknown COLUMN option "DB"
+SP2-0158: unknown COLUMN option "Invalid"
+SP2-0158: unknown COLUMN option "Existence’"
+SP2-0158: unknown COLUMN option "TESTING”"
+
+
+select LPAD(‘*** Start of LogFile ***’,50) from dual
+            *
+ERROR at line 1:
+ORA-00911: invalid character
+
+
+SP2-0552: Bind variable "MI" not declared.
+
+===============
+Database Uptime
+===============
+SP2-0552: Bind variable "MI" not declared.
+
+=================
+Database Wordsize
+=================
+SELECT distinct(‘This is a ‘ || (length(addr)*4) || ‘-bit database’) “WordSize”
+                *
+ERROR at line 1:
+ORA-00911: invalid character
+
+
+
+================
+Software Verison
+================
+
+Oracle Database 11g Release 11.2.0.1.0 - 64bit Production
+PL/SQL Release 11.2.0.1.0 - Production
+CORE	11.2.0.1.0	Production
+TNS for 64-bit Windows: Version 11.2.0.1.0 - Production
+NLSRTL Version 11.2.0.1.0 - Production
+
+=============
+Compatibility
+=============
+SELECT ‘Compatibility is set as ‘||value Compatible
+       *
+ERROR at line 1:
+ORA-00911: invalid character
+
+
+
+================
+Component Status
+================
+
+FROM registry$ WHERE cid=’CATPROC’ ;
+                         *
+ERROR at line 10:
+ORA-06550: line 10, column 26:
+PL/SQL: ORA-00911: invalid character
+ORA-06550: line 9, column 1:
+PL/SQL: SQL Statement ignored
+ORA-06550: line 12, column 28:
+PLS-00103: Encountered the symbol "‘" when expecting one of the following:
+( - + all case mod new null <an identifier>
+<a double-quoted delimited-identifier> <a bind variable>
+continue any avg count current max min prior some s
+
+
+
+
+======================================================
+List of Invalid Database Objects Owned by SYS / SYSTEM
+======================================================
+
+WHEN 0 THEN ‘There are no Invalid Objects’
+            *
+ERROR at line 2:
+ORA-00911: invalid character
+
+
+
+DOC>################################################################
+DOC>
+DOC>If there are no Invalid objects below will result in zero rows.
+DOC>
+DOC>################################################################
+DOC>#
+
+WHERE status=’INVALID’
+             *
+ERROR at line 3:
+ORA-00911: invalid character
+
+
+
+================================
+List of Invalid Database Objects
+================================
+
+WHEN 0 THEN ‘There are no Invalid Objects’
+            *
+ERROR at line 2:
+ORA-00911: invalid character
+
+
+
+DOC>################################################################
+DOC>
+DOC>If there are no Invalid objects below will result in zero rows.
+DOC>
+DOC>################################################################
+DOC>#
+
+WHERE status=’INVALID’
+             *
+ERROR at line 3:
+ORA-00911: invalid character
+
+
+
+==============================================================
+Identifying whether a database was created as 32-bit or 64-bit
+==============================================================
+
+DOC>###########################################################################
+DOC>
+DOC>Result referencing the string ‘B023’ ==> Database was created as 32-bit
+DOC>Result referencing the string ‘B047’ ==> Database was created as 64-bit
+DOC>When String results in ‘B023’ and when upgrading database to 10.2.0.3.0
+DOC>(64-bit) , For known issue refer below articles
+DOC>
+DOC>Note 412271.1 ORA-600 [22635] and ORA-600 [KOKEIIX1] Reported While
+DOC>Upgrading Or Patching Databases To 10.2.0.3
+DOC>Note 579523.1 ORA-600 [22635], ORA-600 [KOKEIIX1], ORA-7445 [KOPESIZ] and
+DOC>OCI-21500 [KOXSIHREAD1] Reported While Upgrading To 11.1.0.6
+DOC>
+DOC>###########################################################################
+DOC>#
+
+SELECT SUBSTR(metadata,109,4) “Metadata”,
+                              *
+ERROR at line 1:
+ORA-00911: invalid character
+
+
+
+===================================================
+Number of Duplicate Objects Owned by SYS and SYSTEM
+===================================================
+
+Counting duplicate objects ….
+
+where owner = ‘SYS’)
+              *
+ERROR at line 6:
+ORA-00911: invalid character
+
+
+
+=========================================
+Duplicate Objects Owned by SYS and SYSTEM
+=========================================
+
+Querying duplicate objects ….
+
+WHERE owner = ‘SYS’)
+              *
+ERROR at line 6:
+ORA-00911: invalid character
+
+
+
+DOC>
+DOC>################################################################################
+DOC>
+DOC>If any objects found please follow below article.
+DOC>Note 1030426.6 How to Clean Up Duplicate Objects Owned by SYS and SYSTEM schema
+DOC>Read the Exceptions carefully before taking actions.
+DOC>
+DOC>################################################################################
+DOC>#
+
+================
+JVM Verification
+================
+
+— If so, get the version of the JAVAM component
+*
+ERROR at line 8:
+ORA-06550: line 8, column 1:
+PLS-00103: Encountered the symbol "—" when expecting one of the following:
+( begin case declare exit for goto if loop mod null pragma
+raise return select update while with <an identifier>
+<a double-quoted delimited-identifier> <a bind variable> <<
+continue close current delete fetch lock insert open rollback
+savepoint set sql execute commit forall merge pipe purge
+
+
+
+================================================
+Checking Existence of Java-Based Users and Roles
+================================================
+
+DOC>
+DOC>################################################################################
+DOC>
+DOC>There should not be any Java Based users for database version 9.0.1 and above.
+DOC>If any users found, it is faulty JVM.
+DOC>
+DOC>################################################################################
+DOC>#
+
+WHEN 0 THEN ‘No Java Based Users’
+            *
+ERROR at line 2:
+ORA-00911: invalid character
+
+
+
+DOC>
+DOC>###############################################################
+DOC>
+DOC>Healthy JVM Should contain Six Roles.
+DOC>If there are more or less than six role, JVM is inconsistent.
+DOC>
+DOC>###############################################################
+DOC>#
+
+WHEN 0 THEN ‘No JAVA related Roles’
+            *
+ERROR at line 2:
+ORA-00911: invalid character
+
+
+
+Roles
+
+SELECT role FROM dba_roles WHERE role LIKE ‘%JAVA%’
+                                           *
+ERROR at line 1:
+ORA-00911: invalid character
+
+
+
+=========================================
+List of Invalid Java Objects owned by SYS
+=========================================
+WHEN 0 THEN ‘There are no SYS owned invalid JAVA objects’
+            *
+ERROR at line 2:
+ORA-00911: invalid character
+
+
+
+DOC>
+DOC>#################################################################
+DOC>
+DOC>Check the status of the main JVM interface packages DBMS_JAVA
+DOC>and INITJVMAUX and make sure it is VALID.
+DOC>If there are no Invalid objects below will result in zero rows.
+DOC>
+DOC>#################################################################
+DOC>#
+
+WHERE object_type LIKE ‘%JAVA%’
+                       *
+ERROR at line 3:
+ORA-00911: invalid character
+
+
+
+INFO: Below query should succeed with ‘foo’ as result.
+select dbms_java.longname(‘foo’) “JAVAVM TESTING” from dual
+                          *
+ERROR at line 1:
+ORA-00911: invalid character
+
+
+
+select LPAD(‘*** End of LogFile ***’,50) from dual
+            *
+ERROR at line 1:
+ORA-00911: invalid character
+
+
+
